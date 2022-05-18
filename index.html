@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Todo Application </h1>
+    <br>
+    <br>
+    <input type="text" id="abc"/>
+    <button onclick="func()">Add Todo</button>
+    <button onclick="deleteall()">Delete All</button>
+    <div></div>
+       <ul id="xyz">
+
+       </ul>
+    </div>
+</body>
+</html>
+<script>
+function func()
+{
+   var a = document.getElementById("abc")
+   var b = document.getElementById("xyz")
+   var c = document.createElement("li")
+   b.appendChild(c)
+   var d = document.createTextNode(a.value)
+   c.appendChild(d)
+   var e = document.createElement("button")
+   var f = document.createTextNode("Delete")
+   e.appendChild(f)
+   c.appendChild(e)
+   e.setAttribute("onclick","del(this)")
+   a.value = " "
+}
+function del(i)
+{
+   i.parentNode.remove()
+}
+function deleteall()
+{
+   var r = document.getElementById("xyz").innerHTML=""
+}
+</script>
